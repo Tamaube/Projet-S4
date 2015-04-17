@@ -1,0 +1,11 @@
+Le client commence tout d'abord par consulter les différents articles présents sur le site.
+Il choisit la quantité qu'il veut pour chaque article. Enfin, il
+peut vérifier son panier avant de passer sa commande, donc modifier la quantité d'articles ou
+en supprimer.
+Une fois que le client est satisfait de son panier, il peut passer sa commande. Pour qu'une 
+commande puisse être effectuée, le client doit être connecté sur son compte. S'il ne possède pas de compte,
+il va devoir s'inscrire, puis ensuite se connecter dessus.
+Une fois que le client est connecté sur son compte, il confirme sa commande, et entre
+les coordonnées nécessaires au paiement de son panier.
+Une fois la commande passée, le panier du client est vidé, et le client peut repasser une
+nouvelle commande.
