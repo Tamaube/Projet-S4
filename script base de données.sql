@@ -41,8 +41,7 @@ CREATE TABLE commande(
 
 CREATE TABLE avis(
 	id INT(10) PRIMARY KEY NOT NULL,
-	client INT NOT NULL,
-	contenu VARCHAR(255),
+	contenu VARCHAR(255)
 );
 
 CREATE TABLE catégorie(
