@@ -22,14 +22,6 @@ CREATE TABLE produit
 	coup_coeur BOOLEAN(1),
 	stock INT(30),
 	description VARCHAR(255),
-	avis INT NOT NULL,
-	CONSTRAINT numAvis
-		FOREIGN KEY (avis)
-		REFERENCES avis(id),
-	catégorie INT NOT NULL,
-	CONSTRAINT numCatégorie
-		FOREIGN KEY (catégorie)
-		REFERENCES catégorie(id),
 );
 
 CREATE TABLE commande(
@@ -51,9 +43,6 @@ CREATE TABLE avis(
 	id INT(10) PRIMARY KEY NOT NULL,
 	client INT NOT NULL,
 	contenu VARCHAR(255),
-	CONSTRAINT userID
-		FOREIGN KEY (client)
-		REFERENCES utilisateur(id),
 );
 
 CREATE TABLE catégorie(
@@ -67,6 +56,10 @@ CREATE TABLE sous_categorie(
 );
 
 CREATE TABLE ProduitSousCat(
+	catégorie INT NOT NULL,
+	CONSTRAINT numCatégorie
+		FOREIGN KEY (catégorie)
+		REFERENCES catégorie(id),
 	souscatégorie INT NOT NULL,
 	CONSTRAINT numCatégorie
 		FOREIGN KEY (souscatégorie)
@@ -77,3 +70,17 @@ CREATE TABLE ProduitSousCat(
 		REFERENCES produit(id)
 );
 
+CREATE TABLE avisClientProduit(
+	avis INT NOT NULL,
+	CONSTRAINT numAvis
+		FOREIGN KEY (avis)
+		REFERENCES avis(id),
+	client INT NOT NULL,
+	CONSTRAINT userID
+		FOREIGN KEY (client)
+		REFERENCES utilisateur(id),
+	produit INT NOT NULL,
+	CONSTRAINT numProduit
+		FOREIGN KEY (produit)
+		REFERENCES produit(id)
+);
