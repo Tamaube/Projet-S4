@@ -5,6 +5,6 @@
 		<title>ROCK'N'CLOTHES</title>
 	</head>
 	<body>
-	
+		<?php require_once('view/header.php'); ?>
 	</body>
 </html>
