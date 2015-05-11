@@ -1,44 +1,35 @@
 <!DOCTYPE html>
+<?php
+	require_once('class/bdd.class.php');
+	$bd = new Bdd();
+	$dbh = $bd->connexion();
+	$req = "SELECT nom FROM sous_categorie";
+	
+	$stmt = $dbh->prepare($req);
+	$stmt->execute();
+	$res = $stmt->fetchAll();
+ ?>
 <html>
 	<head>
 		<meta charset="utf-8" />
 		<title>ROCK'N'CLOTHES</title>
 		<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="style/main.css" rel="stylesheet">
 		<script src="lib/jquery-1.11.2.min.js"></script>
 		<script src="lib/jquery-migrate-1.2.1.min.js"></script>
 		<script src="lib/bootstrap/js/jquery.js"></script>
 		<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-		<style>
-			ul.nav li.dropdown:hover > ul.dropdown-menu {
-				display: block;    
-			}
-			
-			@media (min-width: 979px) {
-			  ul.nav li.dropdown:hover > ul.dropdown-menu {
-				display: block;
-			  }
-			}
-		</style>
 	</head>
 	<body>
 		<div id="content">
-			 <nav class="navbar navbar-default">
-				<ul class="nav navbar-nav liens">
-					<li> <a href="#">Accueil</a> </li>
-					<li> <a href="#">Liens</a> </li>
-					<li class="dropdown"> 
-						<a class="dropdown-toggle" data-hover="dropdown" href="view/header.php">Témoignages<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Dompteurs</a></li>
-							<li><a href="#">Zoos</a></li>
-							<li><a href="#">Chasseurs</a></li>
-							<li class="divider"></li>
-							<li><a href="#">Autres témoignages</a></li>
-						</ul>
-					</li>
-					<li> <a href="#">Références</a> </li>
-				</ul>
-			</nav>
+			 <?php include('view/header.php'); ?>
+			
+			<?php
+				foreach($res as $data)
+				{
+					echo '<div class="col-md-12">' . $data[0] . '</div>';
+				}
+			?>
 		</div>
 		
 
