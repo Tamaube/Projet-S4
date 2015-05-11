@@ -8,15 +8,26 @@
 		<script src="lib/jquery-migrate-1.2.1.min.js"></script>
 		<script src="lib/bootstrap/js/jquery.js"></script>
 		<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+		<style>
+			ul.nav li.dropdown:hover > ul.dropdown-menu {
+				display: block;    
+			}
+			
+			@media (min-width: 979px) {
+			  ul.nav li.dropdown:hover > ul.dropdown-menu {
+				display: block;
+			  }
+			}
+		</style>
 	</head>
 	<body>
 		<div id="content">
 			 <nav class="navbar navbar-default">
-				<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav liens">
 					<li> <a href="#">Accueil</a> </li>
 					<li> <a href="#">Liens</a> </li>
 					<li class="dropdown"> 
-						<a data-toggle="dropdown" href="view/header.php">Témoignages<b class="caret"></b></a>
+						<a class="dropdown-toggle" data-hover="dropdown" href="view/header.php">Témoignages<b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="#">Dompteurs</a></li>
 							<li><a href="#">Zoos</a></li>
