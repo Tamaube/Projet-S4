@@ -3,7 +3,7 @@
 	{
 		private $id;
 		private $nom;
-		private $sesSousCategories[];
+		//private $sesSousCategories;
 		
 		/*============= Description setters ====================*/
 		public function setId($id)
@@ -16,10 +16,10 @@
 			$this->nom = $nom;
 		}
 		
-		public function setSesSousCategories($sesSousCategories)
-		{
-			$this->sesSousCategories = $sesSousCategories;
-		}
+		// public function setSesSousCategories($sesSousCategories)
+		// {
+			// $this->sesSousCategories = $sesSousCategories;
+		// }
 		
 		/*============= Description getters ==============*/
 		public function getId()
@@ -32,10 +32,10 @@
 			return $this->nom;
 		}
 		
-		public function getSesSousCategories()
-		{
-			return $this->sesSousCategories;
-		}
+		// public function getSesSousCategories()
+		// {
+			// return $this->sesSousCategories;
+		// }
 		
 		
 	}

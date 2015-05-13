@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <?php
 	require_once('class/bdd.class.php');
-	$bd = new Bdd();
-	$dbh = $bd->connexion();
-	$req = "SELECT nom FROM sous_categorie";
-	
-	$stmt = $dbh->prepare($req);
-	$stmt->execute();
-	$res = $stmt->fetchAll();
+	require_once('class/categorie.class.php');
+	require_once('model/categorie.model.php');
+	$data = getAllCategorie();
+	$testcat = new Categorie();
+	$testcat->setNom('test');
+	echo $testcat->getNom();
  ?>
 <html>
 	<head>
@@ -25,9 +24,10 @@
 			 <?php include('view/header.php'); ?>
 			
 			<?php
-				foreach($res as $data)
+				echo count($data);
+				foreach($data as $cat)
 				{
-					echo '<div class="col-md-12">' . $data[0] . '</div>';
+					echo $cat->getId() . ' ' . $cat->getNom();
 				}
 			?>
 		</div>
