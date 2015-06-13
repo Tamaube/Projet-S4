@@ -1,4 +1,8 @@
-Notre schèma de notre base de donné nous montre que nous avons deux classes principales qui sont produit et utilisateur.
-Une commande est passé par un utilisateur pour un produit donné.
-Un produit posséde des catégories et des sous catégories qui sont relier grâce à la table "produitsouscat".
+Le schèma relationnel de notre base de données montre que nous avons deux tables principales qui sont: produit, défini par un ID, un nom, un prix, un coup de coeur,un stock et une description
+			utilisateur, défini par un ID, un pseudo, un nom, un prénom, un password, un age, une adresse mail, une rue, une ville, un code postal, un pays, un droit (si l'utilisateur est un client, dans ce cas droit aura la valeur 2, ou un administrateur, droit aura la valeur 1 dans ce cas).
+
+Une commande est définie par un ID, une quantité, une date d'ajout qui est la date où la commande est passée, un statut. La commande est reliée aux tables "produit" et "utilisateur" car elle est passée par un utilisateur pour un produit donné.
+
+Un produit possède des catégories et des sous catégories qui sont reliées grâce à la table "produitsouscat".
+
 Un avis peut être donné par un utilisateur pour un produit donné grâce à la table "avisclientproduit".
