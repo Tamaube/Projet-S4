@@ -1,0 +1,4 @@
+Notre schèma de notre base de donné nous montre que nous avons deux classes principales qui sont produit et utilisateur.
+Une commande est passé par un utilisateur pour un produit donné.
+Un produit posséde des catégories et des sous catégories qui sont relier grâce à la table "produitsouscat".
+Un avis peut être donné par un utilisateur pour un produit donné grâce à la table "avisclientproduit".
