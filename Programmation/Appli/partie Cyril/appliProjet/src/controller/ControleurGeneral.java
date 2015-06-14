@@ -8,6 +8,4 @@ public class ControleurGeneral {
 		sonControleurAdministration = new ControleurAdministration();
 		sonControleurConnexion = new ControleurConnexion();
 	}
-	
-	
 }

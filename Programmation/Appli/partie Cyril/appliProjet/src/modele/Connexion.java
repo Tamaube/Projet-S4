@@ -1,6 +1,9 @@
 package modele;
+import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
+
+import mainAppli.MainAppli;
 
 public class Connexion {
 	private Connection maConnexion;
@@ -50,14 +53,28 @@ public class Connexion {
 	public Connection getConnexion(){
 		return maConnexion;
 	}
+	
+	public Client getAdmin(){
+		return this.admin;
+	}
 
-	public boolean ajouterProduit(Produit pdt) throws SQLException {
+	public void ajouterProduit(Produit pdt) throws SQLException {
 		Statement monInstruction = getConnexion().createStatement();
 		String requete = "INSERT INTO produit(nom, prix, coup_coeur, stock, description) VALUES("+pdt.nom+", "+
 		pdt.prix+", "+pdt.coupDeCoeur+", "+pdt.quantite+", "+pdt.description+")";
-		System.out.println(requete);
 		monInstruction.executeUpdate(requete);
-		return true;
+	}
+	
+	public void supprimerProduit(int id) throws SQLException{
+		Statement monInstruction = getConnexion().createStatement();
+		String requete = "DELETE FROM produit WHERE id="+id;
+		monInstruction.executeUpdate(requete);
+	}
+	
+	public ArrayList<Client> getUtilisateurs() throws SQLException{
+		Statement monInstruction = getConnexion().createStatement();
+		String requete = "SELECT * FROM utilisateur";
+		return null;
 	}
 	
 	public ArrayList<Produit> getProduits() throws SQLException{
@@ -65,15 +82,20 @@ public class Connexion {
 				ResultSet.CONCUR_UPDATABLE);
 		String requete = "Select * FROM produit";
 		ResultSet monResultat = monInstruction.executeQuery(requete);
-		ArrayList resultats = new ArrayList<Produit>();
-		ArrayList resultatLigne = new ArrayList();
+		ArrayList<Produit> resultats = new ArrayList<Produit>();
+		ArrayList<Object> resultatLigne = new ArrayList();
 		ResultSetMetaData rsmd = monResultat.getMetaData();
 		while(monResultat.next()){
         	// Pour chaque contenu de colonne, on va récupérer un objet qu'on va caster en string
         	for(int i = 1; i <= rsmd.getColumnCount(); i++){
         		resultatLigne.add(monResultat.getObject(i));
         	}
-        	resultats.add(resultatLigne);
+        	// Cast to Produit
+        	// ... Horrible code, but it works, so ... meh
+        	// It's the last time I work with Oracle, returns everything in BigDecimal ._.
+        	resultats.add(new Produit(MainAppli.sonControleurGeneral.sonControleurAdministration, resultatLigne.get(1).toString(),
+        			resultatLigne.get(5).toString(),((BigDecimal) resultatLigne.get(2)).floatValue(), ((BigDecimal)resultatLigne.get(4)).intValue(), ((BigDecimal)resultatLigne.get(3)).equals(1),
+        			null, null));
         	resultatLigne = new ArrayList<>();
         }
 		return resultats;

@@ -19,8 +19,8 @@ public class ControleurConnexion {
 		return saConnexion.connecterAdmin(psd, mdp);
 	}
 	
-	public boolean addProduit(Produit pdt) throws SQLException{
-		return saConnexion.ajouterProduit(pdt);
+	public void addProduit(Produit pdt) throws SQLException{
+		saConnexion.ajouterProduit(pdt);
 	}
 	
 	public ArrayList<Produit> getProduits() throws SQLException{
