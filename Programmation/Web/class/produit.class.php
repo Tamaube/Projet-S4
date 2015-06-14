@@ -4,9 +4,31 @@
 		private $id;
 		private $nom;
 		private $prix;
-		private bool $coupDeCoeur;
+		private $coupDeCoeur;
 		private $stock;
 		private $description;
+		private $pathFile;
+		
+		public function __construct (array $donnees)
+		{
+			$this->hydrate($donnees);
+		}
+		
+		private function hydrate(array $donnees)
+		{
+			foreach ($donnees as $key => $value)
+			{
+				// On récupère le nom du setter correspondant à l'attribut.
+				$method = 'set'.ucfirst($key);
+					
+				// Si le setter correspondant existe.
+				if (method_exists($this, $method))
+				{
+				  // On appelle le setter.
+				  $this->$method($value);
+				}
+			}
+		}
 		
 		/*======= Definition des setters =======*/
 		public function setId($id)
@@ -39,6 +61,11 @@
 			$this->description = $description;
 		}
 		
+		public function setPathFile($pathFile)
+		{
+			$this->pathFile = $pathFile;
+		}
+		
 		/*======= Definition des getters =======*/
 		public function getId()
 		{
@@ -65,9 +92,14 @@
 			return $this->description;
 		}
 		
+		public function getPathFile()
+		{
+			return $this->pathFile;
+		}
+		
 		public function isCoupDeCoeur()
 		{
-			return $this->coupDeCoeur;
+			return $this->coupDeCoeur == 1;
 		}
 	}
 ?>

@@ -1,25 +1,45 @@
 <header>
-	<div id="logo_div">
+	<div class="main-header">
+		<div class="row">
+			<div class="col-md-12">
+				<div id="logo">
+					<a href="index.php">
+						<img alt="logo" src="img/logo.png" class="img-responsive" />
+					</a>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div id="title">
-		<h1>ROCK'N'CLOTHES</h1>
-	</div>
-	<nav class="navbar navbar-default">
+	<nav class="navbar">
 		<div class="container-fluid">
 			<ul class="nav navbar-nav liens">
-				<li> <a href="#">Accueil</a> </li>
-				<li> <a href="#">Liens</a> </li>
-				<li class="dropdown"> 
-					<a class="dropdown-toggle" data-hover="dropdown" href="view/header.php">Témoignages<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Dompteurs</a></li>
-						<li><a href="#">Zoos</a></li>
-						<li><a href="#">Chasseurs</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Autres témoignages</a></li>
-					</ul>
-				</li>
-				<li> <a href="#">Références</a> </li>
+				<li> <a href="index.php"><span class="glyphicon glyphicon-home"></span>&nbsp; Accueil</a> </li>
+			<?php
+				foreach($listeCat as $cat)
+				{
+					if ($cat->haveSousCat())
+					{
+						echo '<li class="dropdown">';
+							echo '<a class="dropdown-toggle link-without-style" data-hover="dropdown" data-url="controller/controllerListeProduct.php?idCat=' . 
+									$cat->getId() .
+									'">'. $cat->getNom() .
+									'<b class="caret"></b></a>';
+							echo '<ul class="dropdown-menu">';
+							foreach($cat->getSesSousCategories() as $sousCat)
+							{
+								echo '<li><a class="link-without-style" data-url="controller/controllerListeProduct.php?idCat=' . 
+									$cat->getId() . '&idSousCat=' . $sousCat->getId() .
+									'">'. $sousCat->getNom() . '</a></li>';
+							}
+							echo '</ul>';
+						echo '</li>';
+					} else {
+						echo '<li> <a class="link-without-style" data-url="controller/controllerListeProduct.php?idCat=' . $cat->getId() . '">' . $cat->getNom() . '</a> </li>';
+					}
+				
+				
+				}
+			?>
 			</ul>
 	
 			<form class="navbar-form navbar-right inline-form">

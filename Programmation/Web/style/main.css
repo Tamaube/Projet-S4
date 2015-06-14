@@ -7,3 +7,95 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 	display: block;
   }
 }
+
+#logo, #logo img
+{
+	width: 313px;
+	height: 70px;
+}
+
+#title
+{
+	display: table-cell;
+	vertical-align: middle;
+	height: 160px;
+	line-height:160px;
+}
+/*
+#list-btn-header
+{
+	text-align: right;
+	padding-right: 25px;
+	display: table-cell;
+	line-height: 70px;
+	vertical-align: middle;
+}
+.btn-header
+{
+	margin-left: 10px;
+}
+
+*/
+
+a
+{
+	cursor: pointer;
+}
+/*
+.thumbnail {
+    width: 260px;
+    height: 180px;
+    overflow: hidden;
+    border: 0; 
+    box-shadow: 0 12px 12px -10px #c4c4c4;
+    -webkit-box-shadow: 0 17px 22px -20px #c4c4c4;
+    -moz-box-shadow: 0 12px 12px -10px #c4c4c4;
+	
+}
+
+.thumbnail img 
+{ 
+	width:100%; 
+	height:auto; 
+}
+
+.thumbnails p {
+	text-align: center; 
+	padding: 10px; 
+}
+*/
+.carousel-control
+{
+	  font-size: 48px;
+}
+
+.img-container
+{
+  display: block;
+  width: 100%;
+  position: relative;
+  height: 0;
+  padding: 100% 0 0 0;
+  overflow: hidden;
+}
+ 
+.img-produit-preview
+{
+  position: absolute;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+
+.addPanier
+{
+	margin-left: 2%;
+}
