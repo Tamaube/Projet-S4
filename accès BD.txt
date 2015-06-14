@@ -1,2 +1,5 @@
 user name -> cberth7
 MDP -> asse
+hote -> oracle.iut-orsay.fr
+port -> 1521
+SID -> etudom

@@ -3,7 +3,7 @@
 	{
 		const BDD_USER = "cberth7";
 		const BDD_PASSWD = "asse";
-		const BDD_SERVER = "oci:dbname=//r2d2.etu.iut-orsay.fr:1521/etudom";
+		const BDD_SERVER = "oci:dbname=//oracle.iut-orsay.u-psud.fr:1521/etudom";
 						
 		private $dbh; 
 		
