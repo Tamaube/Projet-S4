@@ -1,7 +1,7 @@
 <?php
-	function getUser($pseudo, $password)
+	function getAllCommandeUser($idClient)
 	{
-		$requete = "SELECT id, pseudo , nom, prenom, age, mail, rue, ville, code_postal, pays ".
+		$requete = "SELECT id, client , quantite, produit ".
 					"FROM utilisateur ".
 					"WHERE pseudo = :pseudo ".
 					"AND password = :password ";
@@ -23,63 +23,6 @@
 			$stmt->closeCursor();
 			
 			return $tempClient;			
-		} catch (Exception $e) {
-			echo $e->getMessage();
-		}
-	}
-	
-	function getUserViaId($id)
-	{
-		$requete = "SELECT id, pseudo , nom, prenom, age, mail, rue, ville, code_postal, pays ".
-					"FROM utilisateur ".
-					"WHERE id = :id";
-		$bd = new Bdd();
-		$dbh = $bd->connexion();
-		// Cette ligne permet d'activier la gestion des erreurs avec PDO :
-		$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		try {
-			$stmt = $dbh->prepare($requete);
-			$stmt->execute(array(":id" => $id));
-			
-			$stmt->setFetchMode(PDO::FETCH_ASSOC);
-			
-			$tempClient = null;
-			if ($stmt->rowCount() == 1) {
-				$tempClient = new Client($stmt->fetch());
-			}
-			
-			$stmt->closeCursor();
-			
-			return $tempClient;			
-		} catch (Exception $e) {
-			echo $e->getMessage();
-		}
-	}
-	
-	function getPasswordUser($id)
-	{
-		$requete = "SELECT password ".
-					"FROM utilisateur ".
-					"WHERE id = :id ";
-		$bd = new Bdd();
-		$dbh = $bd->connexion();
-		// Cette ligne permet d'activier la gestion des erreurs avec PDO :
-		$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		try {
-			$stmt = $dbh->prepare($requete);
-			$stmt->execute(array(':id' => $id));
-			
-			$stmt->setFetchMode(PDO::FETCH_ASSOC);
-			
-			$res = null;
-			if ($stmt->rowCount() == 1) {
-				$temp = $stmt->fetch();
-				$res = $temp['password'];
-			}
-			
-			$stmt->closeCursor();
-			
-			return $res;			
 		} catch (Exception $e) {
 			echo $e->getMessage();
 		}

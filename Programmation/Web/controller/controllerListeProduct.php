@@ -27,7 +27,7 @@
 	$nbCoupCoeur = count($tabAllCoupCoeur);
 	if(isset($_SESSION['userId']))
 	{
-		include('../view/panier.php');
+		include('../controller/controllerPanier.php');
 	} else {
 		include('../view/connection.php');
 	}

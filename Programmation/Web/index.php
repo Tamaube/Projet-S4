@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-
 <?php
-// foreach(get_loaded_extensions() as $extension)
-// {
-    // if(strpos(strtolower($extension), 'pdo') !== FALSE)
-    // {
-        // echo $extension.'<br/>';
-    // }
-// }
 	session_start();
 	require_once('controller/controllerAccueil.php');
 ?>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />

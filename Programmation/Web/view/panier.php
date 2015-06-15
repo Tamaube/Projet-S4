@@ -1,7 +1,7 @@
 <div class="col-xs-12 col-md-4">
 	<div class="panel panel-default">
 	  <div class="panel-heading">
-		<h3 class="panel-title">Votre panier</h3>
+		<h3 class="panel-title">Votre panier <a class="link-without-style" data-url="controller/controllerModifierProfil.php"><?php echo $clt->getPseudo(); ?></a></h3>
 	  </div>
 	  <div class="panel-body">
 		Panel content
