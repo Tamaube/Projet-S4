@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="modele.Produit"/>
+<fullyQualifiedTypeName name="controller.ControleurAdministration"/>
+<fullyQualifiedTypeName name="mainAppli.MainAppli"/>
+<fullyQualifiedTypeName name="modele.GestionCategorie"/>
+<fullyQualifiedTypeName name="java.math.BigDecimal"/>
+</qualifiedTypeNameHistroy>
