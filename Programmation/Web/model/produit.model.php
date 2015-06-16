@@ -73,8 +73,9 @@
 	{
 		$requete = "SELECT id, nom, prix, stock, description, coup_coeur as coupDeCoeur ".
 					", CONCAT('categorie_', psc.categorie, '/souscategorie_', psc.souscategorie, '/produit_', p.id, '.jpg') AS pathFile ".
-					"FROM produit ".
-					"WHERE p.id= :idProduit ";
+					"FROM produit p, produitsouscat psc ".
+					"WHERE psc.produit = p.id ".
+					"AND p.id= :idProduit ";
 		$bd = new Bdd();
 		$dbh = $bd->connexion();
 		// Cette ligne permet d'activier la gestion des erreurs avec PDO :

@@ -1,8 +1,6 @@
 <?php
-	if(!isset($_SESSION['userId']))
-	{
-		session_start();
-	}
+	session_start();
+	
 	
 	require_once('../class/bdd.class.php');
 	require_once('../class/config.class.php');
@@ -19,7 +17,7 @@
 		$clt = getUserViaId($_SESSION['userId']);
 		$tabCommandes = getAllCommandeUser($clt->getId());
 		$nbCmd = count($tabCommandes);
-		include('../view/panier.php');
+		include('../view/seeAllCommande.php');
 	} else {
 		echo '<script>document.location.href = "index.php";</script>';
 	}

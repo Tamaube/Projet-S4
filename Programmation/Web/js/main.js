@@ -21,7 +21,7 @@ $(document).ready(function(){
 	});
 
 
-	$(document).on('submit', 'form', function(){
+	$(document).on('submit', '.form', function(){
 		
 		var reload = $(this).attr('data-reload');
 		
@@ -37,6 +37,32 @@ $(document).ready(function(){
 					alert(data);
 				} else {
 					$('#corps_page').load(reload);
+				}
+			},
+			error: function(data, textStatus)
+			{
+				alert(textStatus);
+			}
+		});
+		 return false;
+	});
+	
+	$(document).on('submit', '.formAddPanier', function(){
+		
+		var reload = 'controller/controllerPanier.php';
+		
+		jQuery.ajax
+		({
+			url: $(this).attr('action'), // URL de la page de traitement
+			type: $(this).attr('method'), // Method du formulaire (POST GET etc ...)
+			data: $(this).serialize(),
+			success: function(data)
+			{
+				if(data != "")
+				{
+					alert(data);
+				} else {
+					$('#panier').load(reload);
 				}
 			},
 			error: function(data, textStatus)

@@ -1,6 +1,6 @@
 <div class="col-xs-12">	
 	<h2>Inscription</h4>
-	<form action="controller/controllerInscription.php" method="post" data-reload="index.php">
+	<form action="controller/controllerInscription.php" method="post" data-reload="index.php" class="form">
 		<fieldset>
 			<legend>
 				Vos Identifiants:

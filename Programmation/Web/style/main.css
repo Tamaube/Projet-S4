@@ -99,3 +99,24 @@ a
 {
 	margin-left: 2%;
 }
+
+.coupCoeur
+{
+	color: red;
+}
+
+.panel-footer
+{
+	padding-bottom: 5%;
+}
+
+
+.qteSeeAllCmd, .LqteSeeAllCmd
+{
+	display:inline;
+}
+
+.qteSeeAllCmd
+{
+	width: 50%
+}

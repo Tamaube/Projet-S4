@@ -27,7 +27,9 @@
 	$nbCoupCoeur = count($tabAllCoupCoeur);
 	if(isset($_SESSION['userId']))
 	{
-		include('../controller/controllerPanier.php');
+		echo '<div class="col-xs-12 col-md-4" id="panier">';
+			include('../controller/controllerPanier.php');
+		echo '</div>';
 	} else {
 		include('../view/connection.php');
 	}

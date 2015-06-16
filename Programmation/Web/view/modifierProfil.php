@@ -1,6 +1,6 @@
 <div class="col-xs-12">	
 	<h2>Modifier votre profil</h4>
-	<form action="controller/controllerTraitementModifProfil.php" method="post" data-reload="index.php">
+	<form action="controller/controllerTraitementModifProfil.php" method="post" data-reload="index.php"  class="form">
 		<fieldset>
 			<legend>
 				Vos Identifiants:

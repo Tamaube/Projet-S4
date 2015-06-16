@@ -34,10 +34,14 @@
 											echo  "<img class='img-produit-preview' alt='image de produit' src='" . Config::IMG_REPERTORY_NAME . $produit->getPathFile() . "' />";
 										echo '</div>';
 									echo '</div>';
-									echo '<p>' . $produit->getNom()  . '<br>';
-									echo '<small class="red">' . $produit->getPrix() . ' €</small><br>';
-									echo '<a href="#" class="btn btn-default">Voir</a>';
-									echo '<a href="#" class="btn btn-primary addPanier">Acheter</a></p>';
+									echo '<form  class="formAddPanier" action="controller/controllerAddPanier.php" method="post">';
+									echo $produit->getNom()  . '<br>';
+										echo '<small class="red">' . $produit->getPrix() . ' €</small><br>';
+										echo '<a class="btn btn-default link-without-style" data-url="controller/controllerSeeOneArticle.php?idProd=' . $produit->getId() .'">Voir</a>';
+										echo '<input type="hidden" name="qte" value="1" />';
+										echo '<input type="hidden" name="idProd" value="' . $produit->getId() . '" />';
+										echo '<input type="submit" class="btn btn-primary addPanier" value="Acheter" />';
+									echo '</form>';
 								echo '</li>';
 								
 								if($i%4 == 3 OR $i == $nbCoupCoeur - 1)
@@ -64,8 +68,12 @@
 					echo '</div>';
 					echo '<div class="caption">';
 						echo '<h3>' . $produit->getNom() . '</h3>';
-						echo '<p><a class="btn btn-default link-without-style" data-url="controller/controllerSeeOneProduct.php?idVideo=' . $produit->getId() . '" role="button">Voir produit</a>';
-						echo ' <a href="#" class="btn btn-primary link-without-style addPanier" id="' . $produit->getId() . '" role="button">Ajouter au panier</a></p>';
+						echo '<form class="formAddPanier" action="controller/controllerAddPanier.php" method="post">';
+							echo '<a class="btn btn-default link-without-style" data-url="controller/controllerSeeOneArticle.php?idProd=' . $produit->getId() .'" role="button">Voir</a>';
+							echo '<input type="hidden" name="idProd" value="' . $produit->getId() . '" />';
+							echo '<input type="hidden" name="qte" value="1" />';
+							echo ' <input type="submit" class="btn btn-primary link-without-style addPanier" value="Acheter" />';
+						echo '</form>';
 					echo '</div>';
 				echo '</div>';
 			echo '</div>';

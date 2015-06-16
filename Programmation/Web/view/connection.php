@@ -2,7 +2,7 @@
 	<div class="panel panel-default">
 	
 			<div class="panel-body">
-				<form action="controller/controllerConnection.php" method="post" id="formConnection" data-reload="index.php">
+				<form action="controller/controllerConnection.php" method="post" id="formConnection" data-reload="index.php"  class="form">
 					<fieldset>
 						<div class="col-xs-12">
 							<label for="pseudo">Pseudo:</label>
