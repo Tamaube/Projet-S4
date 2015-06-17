@@ -20,9 +20,6 @@
 		$commande = new Commande($params);
 		$cmd_enr = getOneCommande($commande);
 		
-		
-		
-		
 		if($cmd_enr == null) {
 			createCommande($commande);
 		} else {
