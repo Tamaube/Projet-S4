@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="498.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView layoutX="14.0" layoutY="14.0" prefHeight="418.0" prefWidth="586.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="ID" />
+          <TableColumn prefWidth="75.0" text="Nom" />
+            <TableColumn prefWidth="75.0" text="prix" />
+            <TableColumn prefWidth="75.0" text="stock" />
+            <TableColumn prefWidth="142.0" text="coup de coeur" />
+            <TableColumn prefWidth="143.0" text="description" />
+        </columns>
+      </TableView>
+      <Button layoutX="14.0" layoutY="453.0" mnemonicParsing="false" text="Précédent" />
+      <Button layoutX="513.0" layoutY="453.0" mnemonicParsing="false" text="Quitter" />
+   </children>
+</AnchorPane>
