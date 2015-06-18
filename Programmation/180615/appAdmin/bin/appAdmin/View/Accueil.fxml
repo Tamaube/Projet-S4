@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appAdmin.Control.MenuControllerAccueil">
+   <children>
+      <Label id="Bienvenue" alignment="CENTER" contentDisplay="CENTER" prefHeight="105.0" prefWidth="600.0" text="Application de gestion de ROCK 'N' CLOTHES " AnchorPane.bottomAnchor="395.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <font>
+            <Font name="Agency FB" size="32.0" />
+         </font>
+      </Label>
+      <Label id="Bienvenue" alignment="CENTER" contentDisplay="CENTER" layoutY="118.0" prefHeight="46.0" prefWidth="600.0" text="Que souhaitez-vous faire ? ">
+         <font>
+            <Font name="System Italic" size="21.0" />
+         </font>
+      </Label>
+      <Button fx:id="modifierProduitPanel" layoutX="189.0" layoutY="250.0" mnemonicParsing="false" onAction="#goToModifierProduit" prefHeight="33.0" prefWidth="222.0" text="Modifier les informations d'un produit" />
+      <Button fx:id="ajouterProduitPanel" layoutX="189.0" layoutY="199.0" mnemonicParsing="false" onAction="#goToAjouterProduit" prefHeight="33.0" prefWidth="222.0" text="Ajouter un nouveau produit" />
+      <Button fx:id="modifierInfosClientPanel" layoutX="189.0" layoutY="303.0" mnemonicParsing="false" onAction="#goToModifierClient" prefHeight="33.0" prefWidth="222.0" text="Modifier les informations d'un client" />
+   </children>
+</AnchorPane>
