@@ -21,7 +21,12 @@
 		$cmd_enr = getOneCommande($commande);
 		
 		if($cmd_enr == null) {
-			createCommande($commande);
+			if($commande->getQuantite() <= $produit->getStock())
+			{
+				createCommande($commande);
+			} else {
+				echo "Le produit n'est plus disponible";
+			}
 		} else {
 			if(isset($_REQUEST['viaPageArticle']))
 			{

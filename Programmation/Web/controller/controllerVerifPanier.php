@@ -12,12 +12,24 @@
 	require_once('../model/commande.model.php');
 	
 	
-	if(isset($_REQUEST['idProd']) && isset($_SESSION['userId']) && isset($_REQUEST['qte']))
+	if(isset($_POST) && isset($_SESSION['userId']))
 	{
-		$idProduits = $_REQUEST['idProd'];
-		$qtes = $_REQUEST['qte'];
-		$nbArticles = count($qtes);
+		$idProduits = [];
+		$qtes = [];
 		
+		
+		foreach($_POST as $key => $val)
+		{
+			if (preg_match('#^qte_#' , $key))
+			{
+				$idProduits[] = intval(substr($key, 4));
+				$qtes[] = $val;
+			}
+		}
+		
+		
+		
+		$nbArticles = count($qtes);
 		$saisieCorrecte = true;
 		$i=0;
 		
@@ -25,6 +37,7 @@
 		{
 			$prod = getOneProduct($idProduits[$i]);
 			$saisieCorrecte = ($qtes[$i] <= $prod->getStock());
+			
 			$i++;
 		}
 		
@@ -37,11 +50,11 @@
 			$data['code_postal'] = $clt->getCode_postal();
 			$data['pays'] = $clt->getPays();
 			
-			//on envoie a javascript les data avec json
+			// on envoie a javascript les data avec json
 			echo json_encode($data);
 		} else {
-			//on envoie a javascript les data avec json
-			echo json_encode(array('message' => 'Une des quantités indiquées est trop élevée'));
+			// on envoie a javascript les data avec json
+			echo json_encode(array('message' => 'Une des quantités indiquées est trop élevée' ));
 		}
 	}
 	

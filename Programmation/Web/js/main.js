@@ -24,7 +24,7 @@ $(document).ready(function(){
 	$(document).on('submit', '.form', function(){
 		
 		var reload = $(this).attr('data-reload');
-		
+				
 		jQuery.ajax
 		({
 			url: $(this).attr('action'), // URL de la page de traitement
@@ -100,7 +100,7 @@ $(document).ready(function(){
 		 return false;
 	});
 	
-	$(document).on('click', '#verifPanier', function(){		
+	$(document).on('click', '#verifPanier', function(){
 		jQuery.ajax
 		({
 			url: $(this).attr('data-url'), // URL de la page de traitement
@@ -119,8 +119,8 @@ $(document).ready(function(){
 					$('#code_postal').val(data.code_postal);
 					$('#pays').val(data.pays);
 					$('#fieldVerifPAnier').hide();
-				}
-				
+					$('.qteSeeAllCmd').attr('readonly', true);
+				}				
 			},
 			error: function(data, textStatus)
 			{

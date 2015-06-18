@@ -23,6 +23,6 @@
 		$clt = new Client($_POST);
 		createUser($clt, $_POST['password']);
 	} else {
-		echo "Un ou plusieurs des champs n'ont pas été remplis";
+		echo "Un ou plusieurs des champs n'ont pas été remplis ou sont incorrects";
 	}
 ?>

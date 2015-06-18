@@ -121,3 +121,12 @@ a
 	width: 50%
 }
 
+.suppPanier:hover
+{
+	cursor: pointer;
+}
+
+select
+{
+	  width: auto;
+}

@@ -40,7 +40,11 @@
 										echo '<a class="btn btn-default link-without-style" data-url="controller/controllerSeeOneArticle.php?idProd=' . $produit->getId() .'">Voir</a>';
 										echo '<input type="hidden" name="qte" value="1" />';
 										echo '<input type="hidden" name="idProd" value="' . $produit->getId() . '" />';
-										echo '<input type="submit" class="btn btn-primary addPanier" value="Acheter" />';
+										if(isset($_SESSION['userId']) && $produit->getStock() > 0){
+											echo '<input type="submit" class="btn btn-primary addPanier" value="Acheter" />';
+										} else {
+											echo '<input type="submit" class="btn btn-default addPanier" disabled value="Indisponible" />';
+										}
 									echo '</form>';
 								echo '</li>';
 								

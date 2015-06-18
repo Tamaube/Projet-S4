@@ -12,7 +12,7 @@
 		$client = getUser($_REQUEST['pseudo'], $_REQUEST['mdp']);
 		if ($client == null)
 		{
-			echo "Mot de passe ou pseudo incorecte";
+			echo "Mot de passe ou pseudo incorrect";
 		} else {
 			$_SESSION['userId'] = $client->getId();
 		}
