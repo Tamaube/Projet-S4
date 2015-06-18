@@ -121,23 +121,6 @@ a
 	width: 50%
 }
 
-#content{
-background-color:orange;
-color: white;
-}
-
-.main-header, .panel{
-	background-color: orange;
-}
-
-#navbar, legend{
-	color: white;
-}
-
-html, body{
-	background-color: black;
-}
-
 
 /* panier
 .form{
