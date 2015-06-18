@@ -12,6 +12,7 @@
 		<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="lib/carousel/bootstrap.min.css" rel="stylesheet">
 		<link href="style/main.css" rel="stylesheet">
+		<link href="style/couleur.css" rel="stylesheet">
 		
 	</head>
 	<body>

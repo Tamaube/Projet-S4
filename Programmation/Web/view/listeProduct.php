@@ -63,24 +63,29 @@
 		</div>
 	<?php } ?>
 	<?php
-		foreach($tabAllProduct as $produit)
+		if ($nbAllProduct <= 0)
 		{
-			echo  '<div class="col-md-4 col-xs-12" >';
-				echo '<div class="thumbnail col-md-12" >';
-					echo '<div class="img-container">';
-						echo  "<img class='img-produit-preview' alt='image de produit' src='" . Config::IMG_REPERTORY_NAME . $produit->getPathFile() . "' />";
-					echo '</div>';
-					echo '<div class="caption">';
-						echo '<h3>' . $produit->getNom() . '</h3>';
-						echo '<form class="formAddPanier" action="controller/controllerAddPanier.php" method="post">';
-							echo '<a class="btn btn-default link-without-style" data-url="controller/controllerSeeOneArticle.php?idProd=' . $produit->getId() .'" role="button">Voir</a>';
-							echo '<input type="hidden" name="idProd" value="' . $produit->getId() . '" />';
-							echo '<input type="hidden" name="qte" value="1" />';
-							echo ' <input type="submit" class="btn btn-primary link-without-style addPanier" value="Acheter" />';
-						echo '</form>';
+			echo "<p>" . $message . "</p>";
+		} else {
+			foreach($tabAllProduct as $produit)
+			{
+				echo  '<div class="col-md-4 col-xs-12" >';
+					echo '<div class="thumbnail col-md-12" >';
+						echo '<div class="img-container">';
+							echo  "<img class='img-produit-preview' alt='image de produit' src='" . Config::IMG_REPERTORY_NAME . $produit->getPathFile() . "' />";
+						echo '</div>';
+						echo '<div class="caption">';
+							echo '<h3>' . $produit->getNom() . '</h3>';
+							echo '<form class="formAddPanier" action="controller/controllerAddPanier.php" method="post">';
+								echo '<a class="btn btn-default link-without-style" data-url="controller/controllerSeeOneArticle.php?idProd=' . $produit->getId() .'" role="button">Voir</a>';
+								echo '<input type="hidden" name="idProd" value="' . $produit->getId() . '" />';
+								echo '<input type="hidden" name="qte" value="1" />';
+								echo ' <input type="submit" class="btn btn-primary link-without-style addPanier" value="Acheter" />';
+							echo '</form>';
+						echo '</div>';
 					echo '</div>';
 				echo '</div>';
-			echo '</div>';
+			}
 		}
 		 
 	?>

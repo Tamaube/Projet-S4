@@ -1,0 +1,69 @@
+body
+{
+	background-image:radial-gradient(white, rgb(130,140,150));
+	color: black;
+}
+
+.nav li > a
+{
+	color: white;
+	text-transform: capitalize;
+}
+
+.container-fluid
+{
+	background-color: black;
+}
+
+.nav .dropdown-toggle .caret, .nav .dropdown-toggle:hover .caret, .nav .dropdown-toggle:focus .caret
+{
+   border-top-color: #FFFFFF; 
+   border-bottom-color: #FFFFFF; 
+     color: white;
+}
+
+
+.well
+{
+	color: white;
+	background-color: black;
+	background-image: none;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active
+{
+	background-color: rgb(132, 0, 0);
+	color: white;
+	background-image: none;
+	border-color: rgba(96,105,115, 0.1) rgba(96,105,115, 0.1) rgba(96,105,115, 0.25);
+}
+
+.panel-default
+{
+	background-color: rgb(40,45,49);
+	color: white;
+}
+
+.panel-footer, .panel-default>.panel-heading
+{
+	background-color: black;
+	color: white;
+	background-image: none;
+}
+
+.panel-default h4 > a,.panel-default  h4 > a:hover, .panel-default h4 > a:focus, .panel-default h4 > a:active,
+.panel-default h3 > a, .panel-default h3 > a:hover, .panel-default h3 > a:focus, .panel-default h3 > a:active
+{
+	color: white;
+}
+
+ h4 > a,  h4 > a:hover,  h4 > a:focus,  h4 > a:active,
+ h3 > a,  h3 > a:hover,  h3 > a:focus,  h3 > a:active
+{
+	color: black;
+}
+
+input
+{
+	color: black;
+}

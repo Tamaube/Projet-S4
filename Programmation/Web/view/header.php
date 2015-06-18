@@ -2,15 +2,18 @@
 	<div class="main-header">
 		<div class="row">
 			<div class="col-md-12">
-				<div id="logo">
-					<a href="index.php">
-						<img alt="logo" src="img/logo.png" class="img-responsive" />
-					</a>
-				</div>
+			<div class="col-md-12">
+					
+						<!--<img alt="logo" src="img/logo.png" class="img-responsive" />-->
+						<h1 id="title"><img  alt="logo" src="img/logo.png" id="logo" />
+										<span>ROCK'N'CLOTHES</span></h1>
+					
+				
+			</div>
 			</div>
 		</div>
 	</div>
-	<nav class="navbar">
+	<nav>
 		<div class="container-fluid">
 			<ul class="nav navbar-nav liens">
 				<li> <a href="index.php"><span class="glyphicon glyphicon-home"></span>&nbsp; Accueil</a> </li>
@@ -42,9 +45,12 @@
 			?>
 			</ul>
 	
-			<form class="navbar-form navbar-right inline-form">
-				<div class="form-group">
-				  <input type="search" class="input-sm form-control" placeholder="Recherche">
+			<form class="navbar-form navbar-right inline-form" id="formRecherche" action="controller/controllerListeProduct.php" 
+					method="post" data-completion="controller/controllerAutoCompletion.php">
+				<div class="form-group col-xs-12">
+				  <input type="search" class="input-sm form-control" name="recherche" id="recherche" list="listRecherche" placeholder="Recherche">
+				  <datalist id="listRecherche">
+				  </datalist>
 				  <button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
 				</div>
 			 </form>

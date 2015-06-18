@@ -2,7 +2,7 @@
 	class Produit
 	{
 		private $id;
-		private $nom;
+		public $nom;
 		private $prix;
 		private $coupDeCoeur;
 		private $stock;

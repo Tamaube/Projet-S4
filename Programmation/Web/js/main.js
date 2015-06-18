@@ -130,16 +130,47 @@ $(document).ready(function(){
 		 return false;
 	});
 	
-	// $(document).on('click','[data-toggle="ajaxModal"]',
-              // function(e) {
-                // $('#ajaxModal').remove();
-                // e.preventDefault();
-                // var $this = $(this)
-                  // , $remote = $this.data('remote') || $this.attr('href')
-                  // , $modal = $('<div class="modal" id="ajaxModal"><div class="modal-body"></div></div>');
-                // $('body').append($modal);
-                // $modal.modal({backdrop: 'static', keyboard: false});
-                // $modal.load($remote);
-    // });
+	$(document).on('submit', '#formRecherche', function(){
+		jQuery.ajax
+		({
+			url: $(this).attr('action'), // URL de la page de traitement
+			type: $(this).attr('method'), // Method du formulaire (POST GET etc ...)
+			data: $(this).serialize(),
+			dataType: 'html',
+			success: function(data)
+			{
+				$('#corps_page').html(data);
+			},
+			error: function(data, textStatus)
+			{
+				alert(textStatus);
+			}
+		});
+		 return false;
+	});
+	
+	$(document).on('keyup', '#recherche', function(e){
+		strRecherche =  $(this).val();
+		
+		jQuery.ajax({
+			url: $('#formRecherche').attr('data-completion'), // URL de la page de traitement
+			type: $('#formRecherche').attr('method'), // Method du formulaire (POST GET etc ...)
+			data: {recherche: strRecherche},
+			dataType: "json",
+			success : function(data) {
+				$('#listRecherche').children('option').remove();
+				for(var i=0; i < data.length; i++)
+				{
+					$('#listRecherche').append('<option value="' + data[i].nom + '">');
+				}
+			},
+			error: function(data, textStatus)
+			{
+				alert(textStatus);
+			}
+		});
+		
+		
+	});
 	
 });	

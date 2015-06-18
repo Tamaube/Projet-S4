@@ -23,7 +23,7 @@
 				
 				<select name="annee">
 					<?php
-						for($i = 14; $i <= 25; $i++)
+						for($i = 15; $i <= 25; $i++)
 						{
 							echo "<option value='" . $i . "'>";
 								echo $i;
@@ -39,4 +39,5 @@
 	</form>
 </div>
 <script>
+	$('nav').hide();
 </script>

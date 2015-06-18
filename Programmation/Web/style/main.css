@@ -1,5 +1,17 @@
 ul.nav li.dropdown:hover > ul.dropdown-menu {
-	display: block;    
+	display: block;
+	background-color: rgb(40,45,49);
+}
+
+ul.nav li a:hover
+{
+	background-color: rgb(40,45,49);
+}
+
+ul.dropdown-menu li a:hover
+{
+	background-color: black;
+	background-image: none;
 }
 
 @media (min-width: 979px) {
@@ -8,10 +20,10 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
   }
 }
 
-#logo, #logo img
+#logo
 {
 	width: 313px;
-	height: 70px;
+	height: 100%;
 }
 
 #title
@@ -21,49 +33,22 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 	height: 160px;
 	line-height:160px;
 }
-/*
-#list-btn-header
+
+.nav
 {
-	text-align: right;
-	padding-right: 25px;
-	display: table-cell;
-	line-height: 70px;
-	vertical-align: middle;
-}
-.btn-header
-{
-	margin-left: 10px;
+	margin-bottom: 2px;
 }
 
-*/
+header
+{
+	margin-bottom: 20px;
+}
 
 a
 {
 	cursor: pointer;
 }
-/*
-.thumbnail {
-    width: 260px;
-    height: 180px;
-    overflow: hidden;
-    border: 0; 
-    box-shadow: 0 12px 12px -10px #c4c4c4;
-    -webkit-box-shadow: 0 17px 22px -20px #c4c4c4;
-    -moz-box-shadow: 0 12px 12px -10px #c4c4c4;
-	
-}
 
-.thumbnail img 
-{ 
-	width:100%; 
-	height:auto; 
-}
-
-.thumbnails p {
-	text-align: center; 
-	padding: 10px; 
-}
-*/
 .carousel-control
 {
 	  font-size: 48px;
@@ -129,4 +114,62 @@ a
 select
 {
 	  width: auto;
+}
+
+.caption h3
+{
+	  font-size: 22px;
+}
+
+.btn-sm
+{
+	font-size: 14px;
+	margin-top: 4px;
+}
+
+.btn-sm span
+{
+	  line-height: 17px;
+}
+
+@font-face {
+    font-family: 'Broken-Detroit';
+    src: url('Broken-Detroit.ttf');
+}
+
+
+#title
+{
+	font-family: 'Broken-Detroit', Arial, serif;
+}
+
+#title span 
+{
+	vertical-align: middle;
+	font-size: 250%;
+}
+
+@media screen and (max-width: 940px)
+{
+	#title span 
+	{
+		vertical-align: middle;
+		font-size: 150%;
+	}
+	
+	#logo
+	{
+		width: 150px;
+		height: auto;
+	}
+}
+
+
+@media screen and (max-width: 670px)
+{
+	#logo
+	{
+		width: 100%;
+		height: auto;
+	}
 }
