@@ -15,6 +15,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
  
 //Controleur gérant les fonctionnalités de la page d'accueil
+
 public class MenuControllerAccueil implements Initializable {
        
 		private Stage prevStage;
@@ -80,8 +81,8 @@ public class MenuControllerAccueil implements Initializable {
           MenuControllerAjouterProduit controller2 = (MenuControllerAjouterProduit)loader2.getController();
          if(controller2 != null) controller2.setPrevStage(prevStage);  
     }
-    
-    //bouton "Modifier client" (partie non encore implémenté
+     
+    //bouton "Modifier client" (partie non encore implémentée)
     @FXML
     public void goToModifierClient(Event event) throws IOException {
        
